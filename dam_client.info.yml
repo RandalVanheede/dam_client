@@ -1,0 +1,7 @@
+name: DAM client
+description: DAM Custom functionality.
+package: DAM
+type: module
+core_version_requirement: ^9.0
+dependencies:
+  hook_event_dispatcher:views_event_dispatcher

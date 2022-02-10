@@ -1,0 +1,10 @@
+{
+    "name": "drupal/dam_client",
+    "description": "Client for the [branding] DAM.",
+    "type": "drupal-module",
+    "license": "GPL-2.0+",
+    "homepage": "",
+    "require": {
+        "drupal/api_connection": "^1.0@alpha"
+    }
+}

@@ -1,0 +1,4 @@
+urls:
+  dev: 'https://example.dam.com'
+  test: 'https://example.dam.com'
+  live: 'https://example.dam.com'

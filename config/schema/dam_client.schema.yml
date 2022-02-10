@@ -1,0 +1,17 @@
+dam_client.settings:
+  type: config_object
+  label: '[branding] DAM config'
+  mapping:
+    urls:
+      type: mapping
+      label: 'URLs'
+      mapping:
+        dev:
+          type: uri
+          label: 'Dev'
+        test:
+          type: uri
+          label: 'Test'
+        live:
+          type: uri
+          label: 'Live'
