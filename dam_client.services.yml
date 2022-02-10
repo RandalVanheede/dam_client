@@ -1,0 +1,4 @@
+services:
+  [branding]_dam_client.api
+    class: \Drupal\dam_client\Api\DamApi
+    arguments: ['@plugin.manager.rest_api_connection']

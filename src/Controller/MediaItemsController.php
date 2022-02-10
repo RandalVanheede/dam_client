@@ -4,12 +4,14 @@ namespace Drupal\dam_client\Controller;
 
 use Drupal\Component\Serialization\Json;
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\dam_client\Api\DamApiInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Define a controller that shows remote media items from [branding] DAM.
  */
-class MediaItemsController extends ControllerBase {
+class MediaItemsController extends ControllerBase implements ContainerInjectionInterface {
 
   /**
    * The [branding] DAM API service.
@@ -26,6 +28,13 @@ class MediaItemsController extends ControllerBase {
    */
   public function __construct(DamApiInterface $dam_api) {
     $this->damApi = $dam_api;
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static($container->get('[branding]_dam_client.api'));
   }
 
   /**

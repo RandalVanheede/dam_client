@@ -3,6 +3,7 @@
 namespace Drupal\dam_client\Api;
 
 use Drupal\api_connection\Plugin\RestApiConnectionInterface;
+use Drupal\api_connection\Plugin\RestApiConnectionManagerInterface;
 use Psr\Http\Message\ResponseInterface;
 
 /**
@@ -20,11 +21,13 @@ class DamApi implements DamApiInterface {
   /**
    * Constructs a new DamApi object.
    *
-   * @param \Drupal\api_connection\Plugin\RestApiConnectionInterface $api_connection
-   *   The API connection service.
+   * @param \Drupal\api_connection\Plugin\RestApiConnectionManagerInterface $rest_api_connection_manager
+   *   The rest API connection plugin manager.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\PluginException
    */
-  public function __construct(RestApiConnectionInterface $api_connection) {
-    $this->apiConnection = $api_connection;
+  public function __construct(RestApiConnectionManagerInterface $rest_api_connection_manager) {
+    $this->apiConnection = $rest_api_connection_manager->createInstance('[branding]_dam_api_connection');
   }
 
   /**

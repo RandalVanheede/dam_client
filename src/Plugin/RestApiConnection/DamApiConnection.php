@@ -12,8 +12,8 @@ use Drupal\Core\Logger\LoggerChannelFactoryInterface;
  * Defines the API functionality for [branding] DAM.
  *
  * @RestApiConnection(
- *   id = "req_res",
- *   label = @Translation("REQ|RES API"),
+ *   id = "[branding]_dam_api_connection",
+ *   label = @Translation("[branding] DAM API connection"),
  *   urls = {
  *     "dev" = "https://reqres.in",
  *     "test" = "https://reqres.in",
